@@ -1,0 +1,18 @@
+# Javascript Truthiness
+
+In Javascript, truthiness is not really that strange or hard to understand.
+Most of the typical expectations exist. For example, 1 is truthy, but 0 is not;
+null is not truthy, nor is undefined. Pretty straightforward. A couple of things
+to watch out for; `[]` - an empty Array - truthy. Whereas `''` - the empty string
+is not.
+
+Where do people run into trouble? Comparisons. Javascript has two different comparison
+operators: `==` and `===`. The latter is called "strict equals" and it's really
+what you should always use.
+
+What about code like this?
+
+  var x = [];
+  if ( x == 0 ) {
+    print('wtf?');
+  }
